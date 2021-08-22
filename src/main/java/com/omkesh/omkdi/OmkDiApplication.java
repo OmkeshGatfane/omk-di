@@ -1,6 +1,9 @@
 package com.omkesh.omkdi;
 
+import com.omkesh.omkdi.controller.ConstructorInjectController;
+import com.omkesh.omkdi.controller.GetterInjectController;
 import com.omkesh.omkdi.controller.MyController;
+import com.omkesh.omkdi.controller.PropertyInjectController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,6 +16,15 @@ public class OmkDiApplication {
 		MyController controller = (MyController) cntx.getBean("myController");
 		String greeting =controller.sayHello();
 		System.out.println(greeting);
+		System.out.println("-------------------property inject context check");
+		PropertyInjectController propertyInjectController  = (PropertyInjectController) cntx.getBean("propertyInjectController");
+		System.out.println(propertyInjectController.getGreeting());
+		System.out.println("-------------------Setter inject context check");
+		GetterInjectController getterInjectController =(GetterInjectController) cntx.getBean("getterInjectController");
+		System.out.println(getterInjectController.getGreeting());
+		System.out.println("-------------------Constructor inject context check");
+		ConstructorInjectController constructorInjectController =(ConstructorInjectController) cntx.getBean("constructorInjectController");
+		System.out.println(constructorInjectController.getGreeting());
 	}
 
 }

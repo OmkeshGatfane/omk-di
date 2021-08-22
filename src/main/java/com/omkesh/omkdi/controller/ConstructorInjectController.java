@@ -1,10 +1,12 @@
 package com.omkesh.omkdi.controller;
 
 import com.omkesh.omkdi.service.GreetingService;
+import org.springframework.stereotype.Controller;
 
+@Controller
 public class ConstructorInjectController
 {
-  public GreetingService greetingService;
+  private final GreetingService greetingService;
 
  public ConstructorInjectController(GreetingService greetingService) {
   this.greetingService = greetingService;
