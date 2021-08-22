@@ -1,11 +1,8 @@
 package com.omkesh.omkdi.controller;
 
-import com.omkesh.omkdi.service.GreetingService;
-import com.omkesh.omkdi.service.GreetingServiceImpl;
+import com.omkesh.omkdi.service.ConstructorInjectService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class PropertyInjectControllerTest {
 
@@ -14,7 +11,7 @@ class PropertyInjectControllerTest {
     void setUp()
     {
      controller = new PropertyInjectController();
-     controller.greetingService=new GreetingServiceImpl();
+     controller.greetingService=new ConstructorInjectService();
     }
 
     @Test
