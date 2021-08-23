@@ -14,8 +14,9 @@ public class OmkDiApplication {
 	public static void main(String[] args) {
 	ApplicationContext cntx = SpringApplication.run(OmkDiApplication.class, args);
 		MyController controller = (MyController) cntx.getBean("myController");
-		String greeting =controller.sayHello();
-		System.out.println(greeting);
+		System.out.println(controller.sayHello());
+//		String greeting =controller.sayHello();
+//		System.out.println(greeting);
 		System.out.println("-------------------property inject context check");
 		PropertyInjectController propertyInjectController  = (PropertyInjectController) cntx.getBean("propertyInjectController");
 		System.out.println(propertyInjectController.getGreeting());
